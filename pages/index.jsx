@@ -71,7 +71,7 @@ function Login() {
             </br>
             <span className='font-bold text-lg ml-12 text-amber-300 '>The A3M NextGen Portal for Interns and Employees.</span>
           </h4>
-          <form className="bg-[#1D1817] w-[50%] ml-[30%] lg:ml-[90%] font-mono rounded-2xl shadow-md p-4 " onSubmit={handleSubmit}>
+          <form className="bg-[#1D1817] w-[70%] lg:w-[50%] ml-[20%] lg:ml-[90%] font-mono rounded-2xl shadow-md p-4 " onSubmit={handleSubmit}>
             <div className="pb-4">
               <label className="block text-white font-bold text-lg" htmlFor="username">
                 Username
