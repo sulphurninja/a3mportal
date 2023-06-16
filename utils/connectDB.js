@@ -15,3 +15,5 @@ const connectDB = async () => {
 
 // Call the updated connectDB function
 connectDB();
+
+export default connectDB
