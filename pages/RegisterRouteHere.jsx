@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { DataContext } from '../store/GlobalState';
 import { postData } from '../utils/fetchData';
 import axios from 'axios'
+import PopUpModal from '../components/PopUpModal'
 
 function Register() {
   const initialState = { userName: '', password: '', name: '', groupId: '' };
@@ -11,6 +12,7 @@ function Register() {
   const { state, dispatch } = useContext(DataContext);
   const { auth = {} } = state;
   const [internGroups, setInternGroups] = useState([]);
+  const [showModalRegister, setShowModalRegister] = useState(false);
 
   useEffect(() => {
     // Fetch intern group names when component mounts
@@ -35,7 +37,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await postData('/auth/register', userData);
-  
+    setShowModalRegister(true)
     console.log(res);
   };
 
@@ -118,6 +120,7 @@ function Register() {
         </form>
         <p className="text-center text-white  text-xs">&copy;A3M NextGen Pvt.Ltd</p>
       </div>
+      <PopUpModal isOpen={showModalRegister} onClose={() => setShowModalRegister(false)} />
     </body>
   );
 }
