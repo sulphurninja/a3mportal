@@ -60,7 +60,7 @@ function Login() {
     
       <div className="h-full w-full absolute opacity-50 bg-black"></div>
       <div className="h-[20%]">hii</div>
-      <div className="absolute ml-[20%] font-bold mt-[80%] lg:mt-[30%] md:mt-[10%]  text-red-600 text-xs font-mono">
+      <div className="absolute ml-[20%] font-bold mt-[150%] lg:mt-[30%] md:mt-[10%]  text-red-600 text-[10px] font-mono">
         Restricted to A3M personnel and authorized users only.
       </div>
       <div className="flex flex-col lg:mt-[-5%] justify-center items-center absolute h-[80%]">
