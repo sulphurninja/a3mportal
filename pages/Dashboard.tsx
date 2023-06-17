@@ -153,29 +153,37 @@ const Dashboard: React.FC = () => {
           </div>
           </Link>
           {/* Progress Card */}
+          <Link href='/Progress'>
           <div className="p-4 bg-[#1D1817] rounded-md hover:bg-[#C53131] cursor-pointer transition duration-300 ease-in-out">
             <FiTrendingUp className="absolute" />
             <h2 className="text-lg font-bold font-mono text-[#FEFEFF] mb-2">Progress</h2>
             <p className="text-[#D7D3D0] font-mono">Track your Journey</p>
           </div>
+          </Link>
           {/* Discussion Card */}
+          <Link href='/chat'>
           <div className="p-4 bg-[#1D1817] rounded-md hover:bg-[#C53131] cursor-pointer transition duration-300 ease-in-out">
             <FiMessageSquare className="absolute" />
             <h2 className="text-lg font-bold font-mono text-[#FEFEFF] mb-2">Discussion / Group Chat</h2>
             <p className="text-[#D7D3D0] font-mono">Connect, Collaborate & Create</p>
           </div>
+          </Link>
            {/* Attendance Card */}
+           <Link href='/Attendance'>
            <div className="p-4 bg-[#1D1817] rounded-md hover:bg-[#C53131] cursor-pointer transition duration-300 ease-in-out">
             <FiCalendar className="absolute" />
             <h2 className="text-lg font-bold font-mono text-[#FEFEFF] mb-2">Attendance</h2>
             <p className="text-[#D7D3D0] font-mono">Track your attendance</p>
           </div>
+          </Link>
           {/* Help Card */}
+          <Link href='/help'>
           <div className="p-4 bg-[#1D1817] rounded-md hover:bg-[#C53131] cursor-pointer transition duration-300 ease-in-out">
             <FiHelpCircle className="absolute" />
             <h2 className="text-lg font-bold font-mono text-[#FEFEFF] mb-2">Help</h2>
             <p className="text-[#D7D3D0] font-mono">Support & Guidance</p>
           </div>
+          </Link>
          
         </div>
         <footer className='mt-12'>
