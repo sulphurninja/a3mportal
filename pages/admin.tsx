@@ -6,6 +6,7 @@ import axios from 'axios';
 import InternGroup from '../components/InternGroup'
 import Tasks from '../components/Tasks'
 import Tutorials from '../components/Tutorials'
+import Users from '../components/Users'
 import React, { useContext, useEffect, useState } from 'react';
 import { FiHome, FiCheckSquare, FiBookOpen, FiTrendingUp, FiMessageSquare, FiHelpCircle } from 'react-icons/fi';
 import Link from 'next/link';
@@ -71,10 +72,10 @@ const AdminDashboard: React.FC = () => {
         <nav className="flex flex-col items-center">
           <div className="py-4">
             <Link href='/'>
-            <button className="text-2xl  text-gray-300 hover:text-[#F56565] transition duration-300 ease-in-out">
-              <FiHome className="lg:ml-1" />
-              <span className="hidden text-sm font-bold text-center md:inline">Home</span>
-            </button>
+              <button className="text-2xl  text-gray-300 hover:text-[#F56565] transition duration-300 ease-in-out">
+                <FiHome className="lg:ml-1" />
+                <span className="hidden text-sm font-bold text-center md:inline">Home</span>
+              </button>
             </Link>
           </div>
           <div className="py-4">
@@ -126,9 +127,9 @@ const AdminDashboard: React.FC = () => {
         </header>
 
         <InternGroup />
-        <Tasks/>
-        <Tutorials/>
-
+        <Tasks />
+        <Tutorials />
+        <Users />
 
         <footer className='mt-12'>
 
