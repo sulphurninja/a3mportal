@@ -3,7 +3,7 @@ import { DataContext } from '@/store/GlobalState';
 import { useRouter } from 'next/router';
 import Cookie from 'js-cookie'
 import React, { useContext, useEffect, useState } from 'react';
-import { FiHome, FiCheckSquare, FiBookOpen, FiTrendingUp, FiMessageSquare, FiHelpCircle } from 'react-icons/fi';
+import { FiHome, FiCheckSquare, FiBookOpen, FiTrendingUp, FiMessageSquare, FiHelpCircle, FiCalendar } from 'react-icons/fi';
 import Link from 'next/link';
 
 const Dashboard: React.FC = () => {
@@ -104,11 +104,20 @@ const Dashboard: React.FC = () => {
             </button>
           </div>
           <div className="py-4">
+            <Link href='/Attendance'>
+            <button className="text-2xl text-gray-300 hover:text-[#F56565] transition duration-300 ease-in-out">
+              <FiCalendar className="lg:ml-4" />
+              <span className="hidden text-sm font-bold md:inline">Calendar</span>
+            </button>
+            </Link>
+          </div>
+          <div className="py-4">
             <button className="text-2xl text-gray-300 hover:text-[#F56565] transition duration-300 ease-in-out">
               <FiHelpCircle className="lg:ml-1" />
               <span className="hidden text-sm font-bold md:inline">Help</span>
             </button>
           </div>
+          
         </nav>
       </aside>
 
@@ -155,12 +164,19 @@ const Dashboard: React.FC = () => {
             <h2 className="text-lg font-bold font-mono text-[#FEFEFF] mb-2">Discussion / Group Chat</h2>
             <p className="text-[#D7D3D0] font-mono">Connect, Collaborate & Create</p>
           </div>
+           {/* Attendance Card */}
+           <div className="p-4 bg-[#1D1817] rounded-md hover:bg-[#C53131] cursor-pointer transition duration-300 ease-in-out">
+            <FiCalendar className="absolute" />
+            <h2 className="text-lg font-bold font-mono text-[#FEFEFF] mb-2">Attendance</h2>
+            <p className="text-[#D7D3D0] font-mono">Track your attendance</p>
+          </div>
           {/* Help Card */}
           <div className="p-4 bg-[#1D1817] rounded-md hover:bg-[#C53131] cursor-pointer transition duration-300 ease-in-out">
             <FiHelpCircle className="absolute" />
             <h2 className="text-lg font-bold font-mono text-[#FEFEFF] mb-2">Help</h2>
             <p className="text-[#D7D3D0] font-mono">Support & Guidance</p>
           </div>
+         
         </div>
         <footer className='mt-12'>
 
