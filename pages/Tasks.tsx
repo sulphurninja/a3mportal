@@ -7,6 +7,9 @@ import { FiHome, FiCheckSquare, FiBookOpen, FiTrendingUp, FiMessageSquare, FiHel
 import axios from 'axios';
 import { motion } from 'framer-motion'
 import Link from 'next/link';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+
 
 interface Task {
     _id: string;
@@ -80,8 +83,25 @@ const Tasks: React.FC = () => {
     if (!auth.user || auth.user.role === 'admin') {
         return null; // or any loading/error message you want to display
     }
-
-
+    const renderDescription = (description: string) => {
+        const codeDelimiter = '@@'; // Delimiter to mark code blocks
+      
+        const parts = description.split(codeDelimiter);
+        const isCodeBlock = (index: number) => index % 2 === 1;
+      
+        return parts.map((part, index) => {
+          if (isCodeBlock(index)) {
+            return (
+              <SyntaxHighlighter key={index} language="javascript" style={atomDark} className="my-4">
+                {part}
+              </SyntaxHighlighter>
+            );
+          } else {
+            return <p key={index}>{part}</p>;
+          }
+        });
+      };
+      
     return (
         <div className="flex min-h-screen text-center bg-gray-100">
             {/* Side Menu */}
@@ -142,11 +162,11 @@ const Tasks: React.FC = () => {
                         Logout
                     </button>
                 </header>
-                <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
+                <div className="grid   grid-cols-1 md:grid-cols-1 lg:grid-cols-1  gap-4">
           {tasks.map((task) => (
             <motion.div
               key={task._id}
-              className="bg-white p-4 rounded shadow-md"
+              className="bg-white  p-4 rounded  shadow-md"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
@@ -154,7 +174,7 @@ const Tasks: React.FC = () => {
               whileTap={{ scale: 0.95 }}
             >
               <h2 className="text-xl text-black font-bold mb-2">{task.title}</h2>
-              <p className="text-gray-600">{task.description}</p>
+              <div className="text-gray-600">{renderDescription(task.description)}</div>
             </motion.div>
           ))}
         </div>
@@ -170,3 +190,7 @@ const Tasks: React.FC = () => {
 };
 
 export default Tasks;
+
+
+
+
